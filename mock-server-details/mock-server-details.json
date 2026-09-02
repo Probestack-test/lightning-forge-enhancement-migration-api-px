@@ -1,0 +1,164 @@
+{
+  "microserviceId" : "6a98001cceef854e3acf80d0",
+  "mocks" : [ {
+    "id" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+    "microserviceId" : "6a98001cceef854e3acf80d0",
+    "specMetadataId" : "6a98002f40e8243f64aac116",
+    "apiSpecName" : "Lightning Forge - Enhancement & Migration API",
+    "name" : "mock-lightning-forge---enhancement-&-migration-api",
+    "mockServiceName" : "mock-lightning-forge---enhancement-&-migration-api",
+    "mockServerUrl" : "https://forgesphere.probestack.io/mock-api/v1/api/mocks/mock-c4e294e4",
+    "responseLatencyMs" : 0,
+    "mockUrl" : "mock-c4e294e4",
+    "isPrivate" : true,
+    "delayMs" : 0,
+    "requestCount" : 0,
+    "createdAt" : "2026-09-02T10:53:48.823Z",
+    "updatedAt" : "2026-09-02T10:53:48.831Z",
+    "endpoints" : [ {
+      "id" : "8fdf9ad5-4c4b-4b7a-9f5f-370ef0659b7d",
+      "mockId" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+      "path" : "/assessment/services",
+      "method" : "GET",
+      "responseStatus" : 200,
+      "responseHeaders" : {
+        "Content-Type" : "application/json"
+      },
+      "responseBody" : "[{\"serviceId\":\"00000000-0000-0000-0000-000000000000\",\"serviceName\":\"payment-processor-service\",\"technology\":\"JAVA_17\",\"complianceScore\":72.5,\"ruleViolations\":14,\"lastAssessment\":\"2024-01-01T00:00:00Z\",\"repositoryUrl\":\"string\"}]",
+      "delayMs" : 0,
+      "isActive" : true,
+      "requestBodySample" : null,
+      "validationMode" : "NONE",
+      "validationSchema" : null,
+      "validateMethod" : true,
+      "createdAt" : "2026-09-02T10:53:48.923Z",
+      "updatedAt" : "2026-09-02T10:53:48.923Z"
+    }, {
+      "id" : "0268cd76-20f5-4820-b66c-4fe8b2885cec",
+      "mockId" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+      "path" : "/enhancements",
+      "method" : "GET",
+      "responseStatus" : 200,
+      "responseHeaders" : {
+        "Content-Type" : "application/json"
+      },
+      "responseBody" : "{\"content\":[{\"id\":\"550e8400-e29b-41d4-a716-446655440000\",\"repositoryName\":\"legacy-payment-gateway\",\"branch\":\"feature/migration\",\"status\":\"IN_PROGRESS\",\"createdAt\":\"2026-09-02T08:15:30Z\"}],\"totalElements\":0,\"totalPages\":0,\"size\":0,\"number\":0}",
+      "delayMs" : 0,
+      "isActive" : true,
+      "requestBodySample" : null,
+      "validationMode" : "NONE",
+      "validationSchema" : null,
+      "validateMethod" : true,
+      "createdAt" : "2026-09-02T10:53:48.861Z",
+      "updatedAt" : "2026-09-02T10:53:48.862Z"
+    }, {
+      "id" : "08678ba9-b196-451f-ad2d-a3cf06118744",
+      "mockId" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+      "path" : "/enhancements",
+      "method" : "POST",
+      "responseStatus" : 202,
+      "responseHeaders" : {
+        "Content-Type" : "application/json"
+      },
+      "responseBody" : "{\"id\":\"550e8400-e29b-41d4-a716-446655440001\",\"repositoryUrl\":\"https://github.com/forgesphere/legacy-crm.git\",\"branch\":\"develop\",\"status\":\"PENDING\",\"appliedFixes\":[{\"generatorName\":\"GLOBAL_EXCEPTION_HANDLER\",\"status\":\"APPLIED\",\"filePath\":\"src/main/java/com/app/GlobalExceptionHandler.java\",\"reason\":\"File already present.\"}],\"createdAt\":\"2024-01-01T00:00:00Z\",\"updatedAt\":\"2024-01-01T00:00:00Z\"}",
+      "delayMs" : 0,
+      "isActive" : true,
+      "requestBodySample" : "{\"repositoryUrl\":\"https://github.com/forgesphere/legacy-crm.git\",\"branch\":\"develop\",\"fixesToApply\":[\"ACTUATOR_HEALTH\",\"GLOBAL_EXCEPTION_HANDLER\",\"PROMETHEUS_METRICS\"],\"jdkVersion\":\"17\",\"mavenOpts\":\"-Xmx1024m -DskipTests\"}",
+      "validationMode" : "NONE",
+      "validationSchema" : null,
+      "validateMethod" : true,
+      "createdAt" : "2026-09-02T10:53:48.872Z",
+      "updatedAt" : "2026-09-02T10:53:48.872Z"
+    }, {
+      "id" : "38f270cc-7425-4afa-b14e-d33767687386",
+      "mockId" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+      "path" : "/enhancements/{jobId}",
+      "method" : "DELETE",
+      "responseStatus" : 204,
+      "responseHeaders" : {
+        "Content-Type" : "application/json"
+      },
+      "responseBody" : "{}",
+      "delayMs" : 0,
+      "isActive" : true,
+      "requestBodySample" : null,
+      "validationMode" : "NONE",
+      "validationSchema" : null,
+      "validateMethod" : true,
+      "createdAt" : "2026-09-02T10:53:48.902Z",
+      "updatedAt" : "2026-09-02T10:53:48.903Z"
+    }, {
+      "id" : "72fa7b80-5615-48b1-9674-91561c1b24cd",
+      "mockId" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+      "path" : "/enhancements/{jobId}",
+      "method" : "GET",
+      "responseStatus" : 200,
+      "responseHeaders" : {
+        "Content-Type" : "application/json"
+      },
+      "responseBody" : "{\"id\":\"550e8400-e29b-41d4-a716-446655440001\",\"repositoryUrl\":\"https://github.com/forgesphere/legacy-crm.git\",\"branch\":\"develop\",\"status\":\"PENDING\",\"appliedFixes\":[{\"generatorName\":\"GLOBAL_EXCEPTION_HANDLER\",\"status\":\"APPLIED\",\"filePath\":\"src/main/java/com/app/GlobalExceptionHandler.java\",\"reason\":\"File already present.\"}],\"createdAt\":\"2024-01-01T00:00:00Z\",\"updatedAt\":\"2024-01-01T00:00:00Z\",\"runs\":[{\"id\":\"00000000-0000-0000-0000-000000000000\",\"runSequence\":1,\"status\":\"QUEUED\",\"buildOutcome\":\"PASSED\",\"logsUrl\":\"https://storage.googleapis.com/forgesphere-logs/run-123.log\",\"startTime\":\"2024-01-01T00:00:00Z\",\"endTime\":\"2024-01-01T00:00:00Z\"}],\"gitWorkspaceState\":\"Clean\"}",
+      "delayMs" : 0,
+      "isActive" : true,
+      "requestBodySample" : null,
+      "validationMode" : "NONE",
+      "validationSchema" : null,
+      "validateMethod" : true,
+      "createdAt" : "2026-09-02T10:53:48.883Z",
+      "updatedAt" : "2026-09-02T10:53:48.884Z"
+    }, {
+      "id" : "112c510b-039a-4dd9-8d40-db656dd0a30a",
+      "mockId" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+      "path" : "/enhancements/{jobId}",
+      "method" : "PUT",
+      "responseStatus" : 200,
+      "responseHeaders" : {
+        "Content-Type" : "application/json"
+      },
+      "responseBody" : "{\"id\":\"550e8400-e29b-41d4-a716-446655440001\",\"repositoryUrl\":\"https://github.com/forgesphere/legacy-crm.git\",\"branch\":\"develop\",\"status\":\"PENDING\",\"appliedFixes\":[{\"generatorName\":\"GLOBAL_EXCEPTION_HANDLER\",\"status\":\"APPLIED\",\"filePath\":\"src/main/java/com/app/GlobalExceptionHandler.java\",\"reason\":\"File already present.\"}],\"createdAt\":\"2024-01-01T00:00:00Z\",\"updatedAt\":\"2024-01-01T00:00:00Z\"}",
+      "delayMs" : 0,
+      "isActive" : true,
+      "requestBodySample" : "{\"branch\":\"main\",\"fixesToApply\":[\"UNUSED_IMPORTS\",\"UTF8_ENCODING\"]}",
+      "validationMode" : "NONE",
+      "validationSchema" : null,
+      "validateMethod" : true,
+      "createdAt" : "2026-09-02T10:53:48.892Z",
+      "updatedAt" : "2026-09-02T10:53:48.893Z"
+    }, {
+      "id" : "f26d793b-104c-43e5-bbe0-56c7adda6b0c",
+      "mockId" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+      "path" : "/enhancements/{jobId}/runs",
+      "method" : "GET",
+      "responseStatus" : 200,
+      "responseHeaders" : {
+        "Content-Type" : "application/json"
+      },
+      "responseBody" : "[{\"id\":\"00000000-0000-0000-0000-000000000000\",\"runSequence\":1,\"status\":\"QUEUED\",\"buildOutcome\":\"PASSED\",\"logsUrl\":\"https://storage.googleapis.com/forgesphere-logs/run-123.log\",\"startTime\":\"2024-01-01T00:00:00Z\",\"endTime\":\"2024-01-01T00:00:00Z\"}]",
+      "delayMs" : 0,
+      "isActive" : true,
+      "requestBodySample" : null,
+      "validationMode" : "NONE",
+      "validationSchema" : null,
+      "validateMethod" : true,
+      "createdAt" : "2026-09-02T10:53:48.914Z",
+      "updatedAt" : "2026-09-02T10:53:48.914Z"
+    }, {
+      "id" : "466b68fa-ba91-4a0f-b962-afbd2953fb30",
+      "mockId" : "9e90b80e-c06d-4ef1-9dfc-aac3545fc245",
+      "path" : "/workspace/git/sync",
+      "method" : "POST",
+      "responseStatus" : 200,
+      "responseHeaders" : {
+        "Content-Type" : "application/json"
+      },
+      "responseBody" : "{\"message\":\"Workspace synced successfully.\",\"commitHash\":\"a1b2c3d4e5f6\"}",
+      "delayMs" : 0,
+      "isActive" : true,
+      "requestBodySample" : "{\"repositoryUrl\":\"git@github.com:forgesphere/legacy-payment-app.git\",\"branch\":\"main\",\"forceClean\":false}",
+      "validationMode" : "NONE",
+      "validationSchema" : null,
+      "validateMethod" : true,
+      "createdAt" : "2026-09-02T10:53:48.931Z",
+      "updatedAt" : "2026-09-02T10:53:48.931Z"
+    } ]
+  } ]
+}

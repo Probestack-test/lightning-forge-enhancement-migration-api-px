@@ -1,0 +1,253 @@
+{
+  "info" : {
+    "name" : "lightning-forge-enhancement-migration-api Postman Collection",
+    "description" : "A high-performance orchestration service designed to automate code enhancements, \ndependency migrations, and structural fixes for legacy Java applications. \nLeverages Git, Maven, and GCS for seamless modernization.\n\n\nOpenAPI version: 1.0.0",
+    "schema" : "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth" : {
+    "type" : "bearer",
+    "bearer" : [ {
+      "key" : "token",
+      "value" : "{{accessToken}}",
+      "type" : "string"
+    } ]
+  },
+  "variable" : [ {
+    "key" : "baseUrl",
+    "value" : "https://api.forgesphere.lightning.com/v1",
+    "type" : "string",
+    "description" : "Override with the base URL of the deployed Apigee proxy."
+  }, {
+    "key" : "accessToken",
+    "value" : "",
+    "type" : "string"
+  }, {
+    "key" : "status",
+    "value" : "",
+    "type" : "string",
+    "description" : "Filter by the current lifecycle status of the job."
+  }, {
+    "key" : "repositoryName",
+    "value" : "",
+    "type" : "string",
+    "description" : "Filter by the source Git repository name."
+  }, {
+    "key" : "page",
+    "value" : "",
+    "type" : "string",
+    "description" : "Page number for pagination."
+  }, {
+    "key" : "size",
+    "value" : "",
+    "type" : "string",
+    "description" : "Number of items per page."
+  }, {
+    "key" : "jobId",
+    "value" : "",
+    "type" : "string",
+    "description" : "Unique identifier of the enhancement job."
+  }, {
+    "key" : "technology",
+    "value" : "",
+    "type" : "string",
+    "description" : "Filter services based on their underlying technology stack."
+  }, {
+    "key" : "complianceScore",
+    "value" : "",
+    "type" : "string",
+    "description" : "Minimum compliance score threshold (0-100)."
+  } ],
+  "item" : [ {
+    "name" : "List all enhancement jobs",
+    "request" : {
+      "method" : "GET",
+      "description" : "List all enhancement jobs\n\nResponses:\n- 200: Successfully fetched the list of enhancement jobs.\n- 500: An unexpected internal server error occurred.",
+      "header" : [ ],
+      "url" : {
+        "raw" : "{{baseUrl}}/enhancements?status={{status}}&repositoryName={{repositoryName}}&page={{page}}&size={{size}}",
+        "host" : [ "{{baseUrl}}" ],
+        "path" : [ "enhancements" ],
+        "query" : [ {
+          "key" : "status",
+          "value" : "{{status}}",
+          "disabled" : true,
+          "description" : "Filter by the current lifecycle status of the job."
+        }, {
+          "key" : "repositoryName",
+          "value" : "{{repositoryName}}",
+          "disabled" : true,
+          "description" : "Filter by the source Git repository name."
+        }, {
+          "key" : "page",
+          "value" : "{{page}}",
+          "disabled" : true,
+          "description" : "Page number for pagination."
+        }, {
+          "key" : "size",
+          "value" : "{{size}}",
+          "disabled" : true,
+          "description" : "Number of items per page."
+        } ]
+      }
+    },
+    "response" : [ ]
+  }, {
+    "name" : "Start a new code enhancement pipeline",
+    "request" : {
+      "method" : "POST",
+      "description" : "Start a new code enhancement pipeline\n\nResponses:\n- 202: Enhancement job accepted and queued for execution.\n- 400: The request payload is malformed or fails validation.\n- 409: Enhancement is already running for the provided repository/branch combination.\n- 500: An unexpected internal server error occurred.",
+      "header" : [ {
+        "key" : "Content-Type",
+        "value" : "application/json",
+        "type" : "text"
+      } ],
+      "body" : {
+        "mode" : "raw",
+        "raw" : "{}",
+        "options" : {
+          "raw" : {
+            "language" : "json"
+          }
+        }
+      },
+      "url" : {
+        "raw" : "{{baseUrl}}/enhancements",
+        "host" : [ "{{baseUrl}}" ],
+        "path" : [ "enhancements" ]
+      }
+    },
+    "response" : [ ]
+  }, {
+    "name" : "Get detailed status of an enhancement job",
+    "request" : {
+      "method" : "GET",
+      "description" : "Get detailed status of an enhancement job\n\nResponses:\n- 200: Detailed job information including the applied fixes and run history.\n- 404: The requested resource could not be found.\n- 500: An unexpected internal server error occurred.",
+      "header" : [ ],
+      "url" : {
+        "raw" : "{{baseUrl}}/enhancements/:jobId",
+        "host" : [ "{{baseUrl}}" ],
+        "path" : [ "enhancements", ":jobId" ],
+        "variable" : [ {
+          "key" : "jobId",
+          "value" : "{{jobId}}",
+          "description" : "Unique identifier of the enhancement job."
+        } ]
+      }
+    },
+    "response" : [ ]
+  }, {
+    "name" : "Update an existing enhancement job configuration",
+    "request" : {
+      "method" : "PUT",
+      "description" : "Update an existing enhancement job configuration\n\nResponses:\n- 200: Enhancement configuration updated successfully.\n- 400: The request payload is malformed or fails validation.\n- 404: The requested resource could not be found.\n- 500: An unexpected internal server error occurred.",
+      "header" : [ {
+        "key" : "Content-Type",
+        "value" : "application/json",
+        "type" : "text"
+      } ],
+      "body" : {
+        "mode" : "raw",
+        "raw" : "{}",
+        "options" : {
+          "raw" : {
+            "language" : "json"
+          }
+        }
+      },
+      "url" : {
+        "raw" : "{{baseUrl}}/enhancements/:jobId",
+        "host" : [ "{{baseUrl}}" ],
+        "path" : [ "enhancements", ":jobId" ],
+        "variable" : [ {
+          "key" : "jobId",
+          "value" : "{{jobId}}"
+        } ]
+      }
+    },
+    "response" : [ ]
+  }, {
+    "name" : "Cancel a pending or in-progress enhancement job",
+    "request" : {
+      "method" : "DELETE",
+      "description" : "Cancel a pending or in-progress enhancement job\n\nResponses:\n- 204: Job successfully cancelled (no content).\n- 404: The requested resource could not be found.\n- 500: An unexpected internal server error occurred.",
+      "header" : [ ],
+      "url" : {
+        "raw" : "{{baseUrl}}/enhancements/:jobId",
+        "host" : [ "{{baseUrl}}" ],
+        "path" : [ "enhancements", ":jobId" ],
+        "variable" : [ {
+          "key" : "jobId",
+          "value" : "{{jobId}}"
+        } ]
+      }
+    },
+    "response" : [ ]
+  }, {
+    "name" : "Get execution history of a specific enhancement job",
+    "request" : {
+      "method" : "GET",
+      "description" : "Get execution history of a specific enhancement job\n\nResponses:\n- 200: History of execution runs.\n- 404: The requested resource could not be found.\n- 500: An unexpected internal server error occurred.",
+      "header" : [ ],
+      "url" : {
+        "raw" : "{{baseUrl}}/enhancements/:jobId/runs",
+        "host" : [ "{{baseUrl}}" ],
+        "path" : [ "enhancements", ":jobId", "runs" ],
+        "variable" : [ {
+          "key" : "jobId",
+          "value" : "{{jobId}}"
+        } ]
+      }
+    },
+    "response" : [ ]
+  }, {
+    "name" : "Fetch assessable code services",
+    "request" : {
+      "method" : "GET",
+      "description" : "Fetch assessable code services\n\nResponses:\n- 200: A list of assessed services matching the criteria.\n- 500: An unexpected internal server error occurred.",
+      "header" : [ ],
+      "url" : {
+        "raw" : "{{baseUrl}}/assessment/services?technology={{technology}}&complianceScore={{complianceScore}}",
+        "host" : [ "{{baseUrl}}" ],
+        "path" : [ "assessment", "services" ],
+        "query" : [ {
+          "key" : "technology",
+          "value" : "{{technology}}",
+          "disabled" : true,
+          "description" : "Filter services based on their underlying technology stack."
+        }, {
+          "key" : "complianceScore",
+          "value" : "{{complianceScore}}",
+          "disabled" : true,
+          "description" : "Minimum compliance score threshold (0-100)."
+        } ]
+      }
+    },
+    "response" : [ ]
+  }, {
+    "name" : "Clone or refresh the Git workspace",
+    "request" : {
+      "method" : "POST",
+      "description" : "Clone or refresh the Git workspace\n\nResponses:\n- 200: Workspace successfully synchronized.\n- 400: The request payload is malformed or fails validation.\n- 500: An unexpected internal server error occurred.",
+      "header" : [ {
+        "key" : "Content-Type",
+        "value" : "application/json",
+        "type" : "text"
+      } ],
+      "body" : {
+        "mode" : "raw",
+        "raw" : "{}",
+        "options" : {
+          "raw" : {
+            "language" : "json"
+          }
+        }
+      },
+      "url" : {
+        "raw" : "{{baseUrl}}/workspace/git/sync",
+        "host" : [ "{{baseUrl}}" ],
+        "path" : [ "workspace", "git", "sync" ]
+      }
+    },
+    "response" : [ ]
+  } ]
+}
