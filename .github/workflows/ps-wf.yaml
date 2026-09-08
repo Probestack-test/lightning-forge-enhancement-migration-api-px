@@ -5,6 +5,10 @@ on:
     branches:
       - feature-adarsha
 
+  pull_request:
+    branches:
+      - release
+
 jobs:
   deploy:
     uses: ForgeCrux/pipeline-template/.github/workflows/apigee-v1.yaml@main
