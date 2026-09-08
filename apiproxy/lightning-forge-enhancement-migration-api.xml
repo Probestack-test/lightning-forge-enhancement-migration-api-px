@@ -5,7 +5,7 @@
 
   Proxy  : lightning-forge-enhancement-migration-api
   Version: 1.0.0
-  BasePath: /v1
+  BasePath: /v4
   Generated: auto-generated — do not edit manually
 
   Policies included:
@@ -25,7 +25,7 @@ dependency migrations, and structural fixes for legacy Java applications.
 Leverages Git, Maven, and GCS for seamless modernization.
 </Description>
   <DisplayName>lightning-forge-enhancement-migration-api</DisplayName>
-  <Basepaths>/v1</Basepaths>
+  <Basepaths>/v4</Basepaths>
   <ConfigurationVersion majorVersion="4" minorVersion="0"/>
   <CreatedAt>0</CreatedAt>
   <CreatedBy>apigee-generator</CreatedBy>
