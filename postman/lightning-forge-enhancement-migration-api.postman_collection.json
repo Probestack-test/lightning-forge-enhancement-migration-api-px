@@ -14,7 +14,7 @@
   },
   "variable" : [ {
     "key" : "baseUrl",
-    "value" : "https://api.forgesphere.lightning.com/v1",
+    "value" : "https://api.forgesphere.lightning.com/v4",
     "type" : "string",
     "description" : "Override with the base URL of the deployed Apigee proxy."
   }, {
